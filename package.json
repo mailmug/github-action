@@ -1,5 +1,23 @@
 {
+  "name": "github-action",
+  "version": "1.0.0",
+  "description": "Test and inspect application emails in GitHub Actions",
+  "homepage": "https://github.com/mailmug/github-action#readme",
+  "bugs": {
+    "url": "https://github.com/mailmug/github-action/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mailmug/github-action.git"
+  },
+  "license": "MIT",
+  "author": "MailMug",
+  "type": "commonjs",
+  "main": "src/index.js",
   "scripts": {
-    "package": "ncc build index.js --license licenses.txt"
+    "package": "ncc build src/index.js"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.44.1"
   }
 }
