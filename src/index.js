@@ -41,7 +41,6 @@ async function run() {
                 );
                 return;
             }
-
             core.info(`Email found: "${subject}"`);
         }
 
