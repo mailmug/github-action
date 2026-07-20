@@ -24,14 +24,10 @@ jobs:
 ## Setup
 
 1. Create a [MailMug](https://mailmug.net) account.
-2. Create an API key.
-3. Add the API key to your GitHub repository secrets:
+2. Create an [API key](https://mailmug.net/admin/my-profile) in your MailMug account.
+3. Go to your GitHub repository: **Settings → Secrets and variables → Actions**.
+4. Add the API key as a repository secret named `MAILMUG_API_KEY`.
 
-```text
-MAILMUG_API_KEY
-```
-
-4. Use the MailMug Action in your GitHub Actions workflow.
 
 ## Features
 

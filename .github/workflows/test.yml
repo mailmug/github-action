@@ -1,0 +1,15 @@
+name: Test MailMug Action
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test MailMug Action
+        uses: mailmug/github-action@main
+        with:
+          api-key: ${{ secrets.MAILMUG_API_KEY }}
