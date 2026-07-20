@@ -23,7 +23,7 @@ jobs:
 
 ## Setup
 
-1. Create a MailMug account.
+1. Create a [MailMug](https://mailmug.net) account.
 2. Create an API key.
 3. Add the API key to your GitHub repository secrets:
 
