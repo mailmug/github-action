@@ -2,6 +2,10 @@ name: MailMug SMTP Sandbox Email Testing
 description: Test and inspect application emails with MailMug SMTP Sandbox
 author: MailMug
 
+branding:
+  icon: mail
+  color: blue
+
 inputs:
   api-key:
     description: MailMug API key
