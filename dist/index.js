@@ -27560,34 +27560,56 @@ const core = __nccwpck_require__(7484);
 async function run() {
     try {
         const apiKey = core.getInput('api-key', { required: true });
+        const inbox = core.getInput('inbox', { required: true });
+        const subject = core.getInput('subject');
 
-        const response = await fetch('https://mailmug.net/api/emails', {
-            headers: {
-                'Authorization': `Bearer ${apiKey}`,
-                'Accept': 'application/json',
-            },
-        });
+        const response = await fetch(
+            `https://mailmug.net/api/inboxes/${inbox}/emails`,
+            {
+                headers: {
+                    'Authorization': `Bearer ${apiKey}`,
+                    'Accept': 'application/json',
+                },
+            }
+        );
 
         if (!response.ok) {
             throw new Error(`MailMug API error: ${response.status}`);
         }
 
         const data = await response.json();
+        const emails = data.data || [];
 
-        core.info(`MailMug email check completed.`);
+        core.info(`Found ${emails.length} email(s).`);
 
-        if (!data.data || data.data.length === 0) {
-            core.setFailed('No emails found in MailMug.');
+        if (emails.length === 0) {
+            core.setFailed('No emails found in the MailMug inbox.');
             return;
         }
 
-        core.info(`Found ${data.data.length} email(s).`);
+        if (subject) {
+            const email = emails.find(
+                (email) => email.subject === subject
+            );
+
+            if (!email) {
+                core.setFailed(
+                    `Email with subject "${subject}" was not found.`
+                );
+                return;
+            }
+
+            core.info(`Email found: "${subject}"`);
+        }
+
+        core.info('MailMug email check completed successfully.');
     } catch (error) {
         core.setFailed(error.message);
     }
 }
 
 run();
+
 module.exports = __webpack_exports__;
 /******/ })()
 ;
