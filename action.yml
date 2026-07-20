@@ -1,4 +1,4 @@
-name: MailMug Email Testing
+name: MailMug SMTP Sandbox Email Testing
 description: Test and inspect application emails with MailMug SMTP Sandbox
 author: MailMug
 
