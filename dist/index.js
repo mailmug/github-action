@@ -27564,7 +27564,7 @@ async function run() {
         const subject = core.getInput('subject');
 
         const response = await fetch(
-            `https://mailmug.net/api/inboxes/${inbox}/emails`,
+            `https://mailmug.net/api/inboxes/${inbox}/emails?per_page=1&page=1`,
             {
                 headers: {
                     'Authorization': `Bearer ${apiKey}`,
