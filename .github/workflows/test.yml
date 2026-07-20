@@ -13,3 +13,4 @@ jobs:
         uses: mailmug/github-action@main
         with:
           api-key: ${{ secrets.MAILMUG_API_KEY }}
+          inbox: 58

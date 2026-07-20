@@ -7,6 +7,14 @@ inputs:
     description: MailMug API key
     required: true
 
+  inbox:
+    description: MailMug inbox ID
+    required: true
+
+  subject:
+    description: Optional email subject to search for
+    required: false
+
 runs:
   using: node24
   main: dist/index.js
