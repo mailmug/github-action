@@ -1,0 +1,12 @@
+name: MailMug Email Testing
+description: Test and inspect application emails with MailMug SMTP Sandbox
+author: MailMug
+
+inputs:
+  api-key:
+    description: MailMug API key
+    required: true
+
+runs:
+  using: node20
+  main: dist/index.js
